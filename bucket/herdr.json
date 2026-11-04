@@ -10,9 +10,22 @@
         }
     },
     "bin": "herdr.exe",
+    "post_install": [
+        "# Install the herdr hooks for Claude Code and Codex. Each install is",
+        "# idempotent and is skipped when that agent's config folder is missing.",
+        "foreach ($agent in @('claude', 'codex')) {",
+        "    try {",
+        "        $out = (& \"$dir\\herdr.exe\" integration install $agent 2>&1 | Out-String).Trim()",
+        "        if ($LASTEXITCODE -eq 0) { Write-Host \"herdr: $agent integration installed\" }",
+        "        else { Write-Host \"herdr: $agent integration skipped: $out\" }",
+        "    } catch {",
+        "        Write-Host \"herdr: $agent integration skipped: $_\"",
+        "    }",
+        "}"
+    ],
     "checkver": {
         "github": "https://github.com/IdanReed/herdr",
-        "regex": "v([\\d.]+-[\\w.]+)"
+        "regex": "releases/tag/v([\\d.]+-[a-z]+\\.\\d+)"
     },
     "autoupdate": {
         "architecture": {
