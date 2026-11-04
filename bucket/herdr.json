@@ -1,12 +1,12 @@
 {
-    "version": "0.9.5-idan.1",
+    "version": "0.9.5-idan.2",
     "description": "Terminal workspace manager for AI coding agents (IdanReed's Herdr build with pane, tab, spaces, and agents modes)",
     "homepage": "https://github.com/IdanReed/herdr",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/IdanReed/herdr/releases/download/v0.9.5-idan.1/herdr-windows-x86_64.zip",
-            "hash": "a5b783cf84451cbcc6b57bbbe1d09b5826b1cfb4a7eed56a6d2b4dccfaefa7c7"
+            "url": "https://github.com/IdanReed/herdr/releases/download/v0.9.5-idan.2/herdr-windows-x86_64.zip",
+            "hash": "90a85a16c71d5330f261bcd1159f3ca5eb313f2f05e1d4f97bd3a056c71ae7c8"
         }
     },
     "bin": "herdr.exe",
